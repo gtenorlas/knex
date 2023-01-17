@@ -1,41 +1,41 @@
-const userService = require("../service/userService");
+const userService = require("../service/blogService");
 module.exports = userController = {
   getAll: async (req, res, next) => {
     try {
-      const users = await userService.getAll();
-      res.json(users);
+      const blogs = await blogService.getAll();
+      res.json(blogs);
     } catch (error) {
       next(error);
     }
   },
   getById: async (req, res, next) => {
     try {
-      const user = await userService.getById(req.params.id);
-      res.json(user);
+      const blog = await blogService.getById(req.params.id);
+      res.json(blog);
     } catch (error) {
       next(error);
     }
   },
   create: async (req, res, next) => {
     try {
-      const user = await userService.create(req.body);
-      res.json(user);
+      const blog = await blogService.create(req.body);
+      res.json(blog);
     } catch (error) {
       next(error);
     }
   },
   update: async (req, res, next) => {
     try {
-      const user = await userService.update(req.params.id, req.body);
-      res.json(user);
+      const blog = await blogService.update(req.params.id, req.body);
+      res.json(blog);
     } catch (error) {
       next(error);
     }
   },
   delete: async (req, res, next) => {
     try {
-      const user = await userService.delete(req.params.id);
-      res.json(user);
+      const blog = await blogService.delete(req.params.id);
+      res.json(blog);
     } catch (error) {
       next(error);
     }

@@ -9,15 +9,16 @@ exports.up = function (knex) {
     table.string("content").notNullable();
     table.string("image").notNullable();
     table
-    .integer("author")
-    .unsigned()
-    .references("id")
-    .inTable("users")
-    .onDelete("CASCADE");
+      .integer("author")
+      .unsigned()
+      .references("id")
+      .inTable("users")
+      .onDelete("CASCADE");
     table.timestamp("created_at").defaultTo(knex.fn.now());
     table.timestamp("updated_at").defaultTo(knex.fn.now());
   });
 };
+
 
 /**
  * @param { import("knex").Knex } knex
